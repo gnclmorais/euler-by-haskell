@@ -21,4 +21,5 @@ primeByIndex n = head (generatePrimes n [])
 
 -- Main section
 main = do
+    --print (primeByIndex 1000)
     print (primeByIndex 10001)
