@@ -1,5 +1,5 @@
 -- Problem 6 — Sum square difference
--- https://projecteuler.net/problem=5
+-- https://projecteuler.net/problem=6
 
 -- n -> Sum of squares of the first nth numbers
 sumOfSquares :: Integer -> Integer
