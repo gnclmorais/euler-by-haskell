@@ -3,7 +3,7 @@
 
 -- As taken from http://stackoverflow.com/a/4695002/590525
 isPrime :: Integer -> Bool
-isPrime k = null [x | x <- [2..k - 1], k `mod`x  == 0]
+isPrime k = null [x | x <- [2..k - 1], k `mod` x  == 0]
 
 -- Number -> Factor -> Prime factors
 primeFactors :: Integer -> Integer -> [Integer]
