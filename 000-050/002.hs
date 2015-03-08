@@ -15,6 +15,17 @@ evenFibonacci max =
     let fibonaccis = generateFibonacci max 0 0
     in foldl (\acc x -> if even x then acc + x else acc) 0 fibonaccis
 
+{-
+fibs = go 1 1
+    where
+        go i j = i : go j (i + j)
+
+takeUntil p [] = []
+takeUntil p (x:xs) = if not (p x) then x : takeUntil p xs else []
+
+evenFibonacci n = sum $ filter even $ takeUntil (>= n) fibs
+-}
+
 -- Main section
 main = do
     print (evenFibonacci 4000000)
