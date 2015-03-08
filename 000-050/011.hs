@@ -23,7 +23,23 @@ horizontal (row@(x:xs):ys) i
 diagonalSlash :: [[Int]] -> Int -> [[Int]]
 diagonalSlash [] _ = []
 diagonalSlash m 0  = transpose m
-diagonalSlash m i  = ((tails (m !! (i-1)) !! i):(diagonalSlash m (i-1)))
+diagonalSlash m i  = zipWith3 superconcat leftZeros m rightZeros
+    where len = length m
+          imx = len - 1
+          superconcat = (\x y z -> x ++ y ++ z)
+          leftZeros   = (map (\x -> replicate x 0) [0..imx])
+          rightZeros  = (map (\x -> replicate x 0) [imx,imx-1..0])
+
+-- TODO
+diagonalBackSlash :: [[Int]] -> Int -> [[Int]]
+diagonalBackSlash [] _ = []
+diagonalBackSlash m 0  = transpose m
+diagonalBackSlash m i  = zipWith3 superconcat leftZeros m rightZeros
+    where len = length m
+          imx = len - 1
+          superconcat = (\x y z -> x ++ y ++ z)
+          leftZeros   = (map (\x -> replicate x 0) [imx,imx-1..0])
+          rightZeros  = (map (\x -> replicate x 0) [0..imx])
 
 --iterateMx :: Int -> [[Int]] -> [[[Int]]]
 --iterateMx _ [] = []
